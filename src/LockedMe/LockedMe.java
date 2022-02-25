@@ -4,6 +4,8 @@ package LockedMe;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import javax.xml.validation.Validator;
+
 
 public class LockedMe{
 	static String path1 = "C:\\Users\\n.suresh.thakare\\Assingment\\Project_Module1\\LockedMe";
@@ -17,17 +19,8 @@ public class LockedMe{
 		
 		
 		do {
-			options();
-			Scanner sc = new Scanner(System.in);
+			validateInput();
 			
-			try {
-				key = sc.nextInt();
-				
-			} catch (InputMismatchException e) {
-				System.out.println(e+"**********Please Enter correct option***************");
-			}
-			
-		
 			switch (key) {
 			case 1:
 				System.out.println("=============================");
@@ -42,7 +35,7 @@ public class LockedMe{
 				obj.fileOptions();
 				Scanner sc1 = new Scanner(System.in);
 				try {
-					key1 = sc.nextInt();
+					key1 = sc1.nextInt();
 				} catch (InputMismatchException e) {
 					System.out.println(e + "Please Enter correct file option");
 					
@@ -58,8 +51,8 @@ public class LockedMe{
 				System.exit(0);
 				break;
 			default:
-				System.out.println("****** Incorrect Input **********");
-			    options();
+				System.out.println("****** Incorrect Input ---Please slect from Above List -------**********");
+				validateInput();
 				break;
 			}
 
@@ -87,9 +80,19 @@ public class LockedMe{
 		System.out.println("2. Show File Options");
 		System.out.println("3. Exit Menu");
 		System.out.println("\nPlease select option : ");
+		Scanner sc = new Scanner(System.in);
+		key = sc.nextInt();
 
 	}
-	
+public static void validateInput() {
+	 try {
+			options();
+
+		} catch (InputMismatchException e) {
+			System.out.println(e + "**********Please Enter correct option***************");
+		
+		}
+}
 
 	
  
