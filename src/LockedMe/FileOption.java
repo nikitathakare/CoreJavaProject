@@ -74,16 +74,16 @@ public class FileOption {
 		}
 		filePath = f.toString();
 		if (f.exists() == true) {
-		 if (filePath.contains(b)) {
-			f.delete();
-		 }
+			if (filePath.contains(b)) {
+				f.delete();
+				System.out.println("\n ******************* File is deleted Successfully *******************");
+			} else {
 
-			System.out.println("\n ******************* File is deleted Successfully *******************");
+				System.out.println("\n******************* File NOT Found *******************");
 
+			}
 		} else {
-
 			System.out.println("\n******************* File NOT Found *******************");
-
 		}
 
 	}
@@ -103,14 +103,16 @@ public class FileOption {
 		FilePath = f.toString();
 		if (f.exists() == true) {
 			if (FilePath.contains(b)) {
+
+				System.out.println("\n******************* File " + f.getName() + " is found *******************");
+			} else {
+
+				System.out.println("******************* File " + f.getName() + " is not found *******************");
+
 			}
-			System.out.println("\n******************* File " + f.getName() + " is found *******************");
-		}
 
-		else {
-
+		} else {
 			System.out.println("******************* File " + f.getName() + " is not found *******************");
-
 		}
 
 	}
