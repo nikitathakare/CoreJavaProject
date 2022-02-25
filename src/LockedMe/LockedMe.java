@@ -4,8 +4,6 @@ package LockedMe;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import javax.xml.validation.Validator;
-
 
 public class LockedMe{
 	static String path1 = "C:\\Users\\n.suresh.thakare\\Assingment\\Project_Module1\\LockedMe";
@@ -19,7 +17,15 @@ public class LockedMe{
 		
 		
 		do {
-			validateInput();
+			
+			try {
+				options();
+
+			} catch (InputMismatchException e) {
+				System.out.println(e + "**********Please Enter correct option***************");
+				options();
+			}
+			
 			
 			switch (key) {
 			case 1:
@@ -51,9 +57,9 @@ public class LockedMe{
 				System.exit(0);
 				break;
 			default:
-				System.out.println("****** Incorrect Input ---Please slect from Above List -------**********");
-				validateInput();
-				break;
+				System.out.println("****** Incorrect Input **********");
+			 
+			    break;
 			}
 
 		}
@@ -84,15 +90,7 @@ public class LockedMe{
 		key = sc.nextInt();
 
 	}
-public static void validateInput() {
-	 try {
-			options();
-
-		} catch (InputMismatchException e) {
-			System.out.println(e + "**********Please Enter correct option***************");
-		
-		}
-}
+	
 
 	
  
